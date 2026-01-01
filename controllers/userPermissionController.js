@@ -8,7 +8,7 @@ module.exports = {
                 .populate('permissionId');
             res.status(200).json(connections);
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            res.status(500).json({message: error.message});
         }
     },
 
@@ -18,7 +18,7 @@ module.exports = {
             await newConnection.save();
             res.status(201).json(newConnection);
         } catch (error) {
-            res.status(400).json({ message: error.message });
+            res.status(400).json({message: error.message});
         }
     },
 
@@ -27,7 +27,7 @@ module.exports = {
             const updatedConnection = await UserPermission.findByIdAndUpdate(req.params.id, req.body, { new: true });
             res.status(200).json(updatedConnection);
         } catch (error) {
-            res.status(400).json({ message: error.message });
+            res.status(400).json({message: error.message});
         }
     },
 
@@ -36,7 +36,7 @@ module.exports = {
             await UserPermission.findByIdAndDelete(req.params.id);
             res.status(200).json({ message: 'Connection deleted' });
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            res.status(500).json({message: error.message});
         }
     }
 };
